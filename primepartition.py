@@ -18,4 +18,3 @@ def primepartition(n):
 		else:
 			return False
 
-print(primepartition(7))
