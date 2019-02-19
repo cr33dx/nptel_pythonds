@@ -1,14 +1,3 @@
-def matrixflip(lis,flip):
-	lix = lis[:]
-	if flip == 'h':
-		for i in range(len(lix)):
-				for j in range(len(lix[i])//2):
-					(lix[i][j],lix[i][len(lix[i])-1-j]) = (lix[i][len(lix[i])-1-j],lix[i][j])
-		return lix			
-	if flip == 'v':
-		for i in range(len(lix)//2):
-			(lix[i],lix[len(lix)-1-i]) = (lix[len(lix)-1-i],lix[i])
-		return lix
 import math
 def isPrime(lis):
 	flag = 0
@@ -46,17 +35,3 @@ def primesquare(lis):
 			return True
 	else:
 		return False
-
-def progression(lis):
-	if(len(lis) != 1):
-		d = lis[1] - lis[0]
-		flag = 0
-		for i in range(1,len(lis)):
-			if ((lis[i] - lis[i-1]) != d):
-				flag = 1
-		if flag == 1:
-			return False
-		else:
-			return True
-	else:
-		return True
