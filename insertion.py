@@ -1,8 +1,10 @@
 def insertion(lis):
-	for i in range(len(lis)):
-		pos = i
-		while(i>0 and lis[pos]<lis[i-1]):
-			(lis[pos], lis[pos-1]) = (lis[pos], lis[pos-1])
-			pos -= 1
-	print (lis)
-insertion([9,8,7,6,5,4,3,2,1,0])
+	for i in range(1,len(lis)):
+		pos = lis[i]
+		j = i - 1
+		while(j>=0 and pos<lis[j]):
+			lis[j+1] = lis[j]
+			j-=1
+		lis[j+1] = pos
+	return lis
+print(insertion([9,8,1,2,3,7]))
