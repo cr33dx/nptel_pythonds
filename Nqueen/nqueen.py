@@ -1,9 +1,9 @@
 def checkValid(mat,x,y):
-	for i in range(len(mat)):
-		if(mat[x][i] == True):
+	for i in range(1,len(mat)):
+		if(mat[(x+i)%4][y] == True):
 			return True
-	for i in range(len(mat)):
-		if(mat[i][y] == True):
+	for i in range(1,len(mat)):
+		if(mat[x][(y+i)%4] == True):
 			return True
 	for i in range((len(mat))):
 		for j in range(len(mat)):
@@ -19,10 +19,9 @@ def nqueen(table,n):
 	if n == 0:
 		print(table) 
 		return True
-	else:
-		print (table)
-	for i in range (n):
-		for j in range(n):
+
+	for i in range (len(table)):
+		for j in range(len(table)):
 			if(checkValid(table,i,j)):
 				continue
 			table[i][j] = True
@@ -32,4 +31,4 @@ def nqueen(table,n):
 	return False
 
 
-nqueen([[False]*4 for _ in range(4)],4)
+nqueen([[False]*5 for _ in range(5)],5)
